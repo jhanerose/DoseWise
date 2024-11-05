@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoseWise: Weight-Based Dosage Calculator</title>
+
+    <!-- External CSS for custom styling -->
     <link rel="stylesheet" href="ddc.css">
+    <!-- Favicon for browser tab icon -->
     <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+    <!-- PyScript library CSS and JavaScript for interactive functionality -->
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
@@ -13,10 +17,12 @@
 
 <header>
     <div class="header-container">
+        <!-- Logo section with image and title -->
         <div class="logo">
             <img src="logo.png" alt="DoseWise Logo">
             <h1>DoseWise</h1>
         </div>
+        <!-- Navigation bar with links to sections within the page -->
         <nav class="nav-links">
             <a href="#home"><img src="home.png" alt="Home" class="nav-icon"></a>
             <a href="#about"><img src="about-us.png" alt="About Us" class="nav-icon"></a>
@@ -31,13 +37,13 @@
     <hr>
     <h3>Input</h3>
 
-    <!-- Dosage Input Group -->
+    <!-- Input field for dosage in mg/kg -->
     <div class="input-group">
         <label for="dosage">Dosage (mg/kg):</label>
         <input type="number" id="dosage" placeholder="Enter dosage" onchange="calculate_dosage()">
     </div>
 
-    <!-- Weight Input Group -->
+    <!-- Input field for weight in kg -->
     <div class="input-group">
         <label for="weight">Weight (kg):</label>
         <input type="number" id="weight" placeholder="Enter weight" onchange="calculate_dosage()">
@@ -45,13 +51,13 @@
 
     <h4>Liquid Formulation (optional):</h4>
 
-    <!-- Medication Amount Input Group -->
+    <!-- Optional input for medication amount in mg -->
     <div class="input-group">
         <label for="med-amount">Medication Amount (mg):</label>
         <input type="number" id="med-amount" placeholder="Enter medication amount" onchange="calculate_dosage()">
     </div>
 
-    <!-- Liquid Volume Input Group -->
+    <!-- Optional input for liquid volume in mL -->
     <div class="input-group">
         <label for="per-volume">Per Volume (mL):</label>
         <input type="number" id="per-volume" placeholder="Enter liquid volume" onchange="calculate_dosage()">
@@ -60,86 +66,88 @@
     <h3>Results</h3>
     <p class="important-message">Important: Inputs must be complete to perform calculation.</p>
 
-    <!-- Result Display -->
+    <!-- Display area for calculated dose and liquid dose -->
     <div class="result">
         <p><b>Dose:</b> <span id="dose-result"></span></p>
         <p><b>Liquid Dose:</b> <span id="liquid-dose-result"></span></p>
     </div>
 
-    <!-- Equations -->
+    <!-- Display the equations used for calculation -->
     <div class="equations">
         <p><b>Equations Used:</b><br>
             Dose = Weight * Dosage<br>
             LiquidDose = Dose * PerVolume / MedAmount
         </p>
     </div>
-<div class="table-container">
-<table>
-  <thead>
-    <tr>
-      <th colspan="5">Age-Specific Dosage Guidelines and Safety Precautions</th>
-    </tr>
-    <tr>
-      <th>Age Group</th>
-      <th>Dosage Guidelines (Example)</th>
-      <th>Frequency</th>
-      <th>Maximum Dosage (Should Not Exceed)</th>
-      <th>Notes on Exceeding Dosage</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><b>Infants (0-1 year)</b></td>
-      <td>2.5-5 mg/kg per dose</td>
-      <td>Every 6-8 hours</td>
-      <td>30 mg/kg per day</td>
-      <td>Exceeding dosage can lead to serious side effects such as respiratory distress. Always consult a pediatrician.</td>
-    </tr>
-    <tr>
-      <td><b>Children (1-12 years)</b></td>
-      <td>5-10 mg/kg per dose</td>
-      <td>Every 6-8 hours</td>
-      <td>60 mg/kg per day</td>
-      <td>Overdosing may cause nausea, vomiting, and other adverse effects. Seek medical advice immediately.</td>
-    </tr>
-    <tr>
-      <td><b>Adolescents (12-18 years)</b></td>
-      <td>10-15 mg/kg per dose</td>
-      <td>Every 6-8 hours</td>
-      <td>90 mg/kg per day</td>
-      <td>Exceeding the recommended dosage can result in severe side effects including liver damage. Consult a healthcare provider.</td>
-    </tr>
-    <tr>
-      <td><b>Adults (18+ years)</b></td>
-      <td>500-1000 mg per dose</td>
-      <td>Every 6-8 hours</td>
-      <td>4000 mg per day</td>
-      <td>Overdosing can lead to toxicity and serious health issues. Immediate medical attention is required.</td>
-    </tr>
-  </tbody>
-</table>
 
+<div class="table-container">
+    <!-- Table displaying age-specific dosage guidelines and safety precautions -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">Age-Specific Dosage Guidelines and Safety Precautions</th>
+            </tr>
+            <tr>
+                <th>Age Group</th>
+                <th>Dosage Guidelines (Example)</th>
+                <th>Frequency</th>
+                <th>Maximum Dosage (Should Not Exceed)</th>
+                <th>Notes on Exceeding Dosage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Infants (0-1 year)</b></td>
+                <td>2.5-5 mg/kg per dose</td>
+                <td>Every 6-8 hours</td>
+                <td>30 mg/kg per day</td>
+                <td>Exceeding dosage can lead to serious side effects such as respiratory distress. Always consult a pediatrician.</td>
+            </tr>
+            <tr>
+                <td><b>Children (1-12 years)</b></td>
+                <td>5-10 mg/kg per dose</td>
+                <td>Every 6-8 hours</td>
+                <td>60 mg/kg per day</td>
+                <td>Overdosing may cause nausea, vomiting, and other adverse effects. Seek medical advice immediately.</td>
+            </tr>
+            <tr>
+                <td><b>Adolescents (12-18 years)</b></td>
+                <td>10-15 mg/kg per dose</td>
+                <td>Every 6-8 hours</td>
+                <td>90 mg/kg per day</td>
+                <td>Exceeding the recommended dosage can result in severe side effects including liver damage. Consult a healthcare provider.</td>
+            </tr>
+            <tr>
+                <td><b>Adults (18+ years)</b></td>
+                <td>500-1000 mg per dose</td>
+                <td>Every 6-8 hours</td>
+                <td>4000 mg per day</td>
+                <td>Overdosing can lead to toxicity and serious health issues. Immediate medical attention is required.</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-    <!-- PyScript block for automatic calculation -->
+
+    <!-- PyScript for dosage calculation logic -->
     <py-script>
     def calculate_dosage(*args, **kwargs):
         try:
-            # Get input values
+            # Get input values from user fields
             dosage = float(Element("dosage").element.value)
             weight = float(Element("weight").element.value)
             med_amount = Element("med-amount").element.value
             per_volume = Element("per-volume").element.value
 
-            # Input validation
+            # Check if dosage and weight are valid
             if dosage <= 0 or weight <= 0:
                 Element("dose-result").write("")
                 Element("liquid-dose-result").write("")
                 return
 
-            # Calculate dose
+            # Calculate the dose
             dose = weight * dosage
 
-            # If optional liquid formulation is provided
+            # Check if optional fields are filled for liquid formulation calculation
             if med_amount and per_volume:
                 med_amount = float(med_amount)
                 per_volume = float(per_volume)
@@ -148,11 +156,12 @@
                     Element("liquid-dose-result").write("")
                     return
 
+                # Calculate the liquid dose
                 liquid_dose = (dose * per_volume) / med_amount
             else:
                 liquid_dose = None
 
-            # Update the result display
+            # Display the calculated dose and liquid dose if available
             Element("dose-result").write(f"{dose:.2f} mg")
             if liquid_dose is not None:
                 Element("liquid-dose-result").write(f"{liquid_dose:.2f} mL")
@@ -160,18 +169,19 @@
                 Element("liquid-dose-result").write("N/A")
 
         except ValueError:
-            # Handle invalid input
+            # Handle invalid input cases
             Element("dose-result").write("")
             Element("liquid-dose-result").write("")
 
-    # Attach event listeners to inputs
+    # Attach the calculate_dosage function to input changes
     input_elements = ["dosage", "weight", "med-amount", "per-volume"]
     for element_id in input_elements:
         Element(element_id).element.oninput = calculate_dosage
-        </py-script>
+    </py-script>
 
 </div>
 
+<!-- Footer section with contact information -->
 <footer style="background-color: #068d57; color: white; padding: 10px; text-align: center;">
     <h1>Contact Me</h3>
     <div class="social-icons" style="margin: 10px 0;">
@@ -184,3 +194,4 @@
 
 </body>
 </html>
+
